@@ -28,7 +28,11 @@ const loadNews = (category_id) =>{
 const displayNews = (allnews) =>{
        const newsContainer = document.getElementById('news-container');
        newsContainer.textContent = '';
-
+       const resultsFound = document.getElementById('result-field');
+       const numberOfResults = allnews.length;
+       console.log(numberOfResults);
+       resultsFound.innerText = numberOfResults;
+         console.log(allnews.length);
         allnews.forEach( news =>{     
         const newsDiv = document.createElement('div');
         newsDiv.innerHTML = `
@@ -41,6 +45,7 @@ const displayNews = (allnews) =>{
                 <div class="card-actions justify-end">
                 <img class="w-10 rounded-full" src=${news.author.img}/>
                 <p>${news.author.name} | ${news.author.published_date}</p>
+                <p>View : ${news.total_view}</p>
                 <label onclick="loadDetails('${news._id}')" for="my-modal-4" class="btn btn-primary modal-button">Details</label>
             </div>
         </div>
@@ -61,7 +66,7 @@ const loadDetails = (_id) =>{
 const displayDetails = (newsDetails) => {
      const detailsField = document.getElementById('details-container');
      newsDetails.forEach( news => {
-        console.log(news);
+        // console.log(news);
         detailsField.innerHTML = `
         <img src="${news.image_url}"/><br/>
         <p>${news.details}</p></br>

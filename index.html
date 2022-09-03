@@ -32,12 +32,20 @@
         </div>
     </header>
     <main>
+      
       <!-- news categories -->
         <section class="container mx-auto">
           <div id="category-container" class="my-8 grid grid-cols-9 gap-4">
             <button class="btn btn-link">Home</button>
           </div> 
         </section>
+        <!-- number of results found -->
+        <div class="container mx-auto my-6">
+          <button class="btn gap-2 bg-slate-500">
+            News Found :
+            <div class="badge"><span id="result-field"></span></div>
+          </button>
+        </div>
       <!-- available news -->
         <section class="container mx-auto">
           <div id="news-container" class="grid grid-cols-1 gap-6">
