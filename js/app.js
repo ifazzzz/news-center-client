@@ -25,6 +25,7 @@ const loadNews = (category_id) =>{
     .then(response => response.json())
     .then(data => displayNews(data.data))
     .catch(error => console.log(error))
+    
     const spinner = document.getElementById('spinner');
     spinner.classList.remove('hidden');
 }
@@ -34,7 +35,9 @@ const displayNews = (allnews) =>{
     // spinner.classList.remove('hidden');
        const newsContainer = document.getElementById('news-container');
        newsContainer.textContent = '';
+
        spinner.classList.add('hidden'); 
+
        const resultsFound = document.getElementById('result-field');
        const numberOfResults = allnews.length;
        resultsFound.innerText = numberOfResults;
