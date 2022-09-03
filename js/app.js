@@ -5,7 +5,7 @@ const loadCategories = () =>{
         .then(data => displayCategories(data.data.news_category)) 
         .catch(error => console.log(error))
 }
-
+// display All The Categories
 const displayCategories = (categories) =>{
     const categoryContainer = document.getElementById('category-container');
     
@@ -18,7 +18,7 @@ const displayCategories = (categories) =>{
     })
     
 }
-
+// Load available news
 const loadNews = (category_id) =>{
     const url =` https://openapi.programming-hero.com/api/news/category/${category_id}`;
     fetch(url)
@@ -29,10 +29,8 @@ const loadNews = (category_id) =>{
     const spinner = document.getElementById('spinner');
     spinner.classList.remove('hidden');
 }
-
+// display available news
 const displayNews = (allnews) =>{
-    // const spinner = document.getElementById('spinner');
-    // spinner.classList.remove('hidden');
        const newsContainer = document.getElementById('news-container');
        newsContainer.textContent = '';
 
@@ -41,7 +39,7 @@ const displayNews = (allnews) =>{
        const resultsFound = document.getElementById('result-field');
        const numberOfResults = allnews.length;
        resultsFound.innerText = numberOfResults;
-
+            // sort by views
             allnews.sort((a, b) => {
                 return b.total_view - a.total_view;
             })
@@ -67,7 +65,7 @@ const displayNews = (allnews) =>{
         newsContainer.appendChild(newsDiv);  
     })
 }
-
+// load details in modal
 const loadDetails = (_id) =>{
     const url =`https://openapi.programming-hero.com/api/news/${_id}`;
     fetch(url)
