@@ -1,8 +1,9 @@
 const loadCategories = () =>{
-    const url = `https://openapi.programming-hero.com/api/news/categories`;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => displayCategories(data.data.news_category)) 
+        const url = `https://openapi.programming-hero.com/api/news/categories`;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => displayCategories(data.data.news_category)) 
+        .catch(error => console.log(error))
 }
 
 const displayCategories = (categories) =>{
@@ -23,6 +24,7 @@ const loadNews = (category_id) =>{
     fetch(url)
     .then(response => response.json())
     .then(data => displayNews(data.data))
+    .catch(error => console.log(error))
 }
 
 const displayNews = (allnews) =>{
@@ -65,12 +67,12 @@ const loadDetails = (_id) =>{
     fetch(url)
     .then(response => response.json())
     .then(data => displayDetails(data.data))
+    .catch(error => console.log(error))
 }
 
 const displayDetails = (newsDetails) => {
      const detailsField = document.getElementById('details-container');
      newsDetails.forEach( news => {
-        // console.log(news);
         detailsField.innerHTML = `
         <img src="${news.image_url}"/><br/>
         <p>${news.details}</p></br>
