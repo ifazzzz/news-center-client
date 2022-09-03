@@ -28,11 +28,15 @@ const loadNews = (category_id) =>{
 const displayNews = (allnews) =>{
        const newsContainer = document.getElementById('news-container');
        newsContainer.textContent = '';
+
        const resultsFound = document.getElementById('result-field');
        const numberOfResults = allnews.length;
-       console.log(numberOfResults);
        resultsFound.innerText = numberOfResults;
-         console.log(allnews.length);
+
+            allnews.sort((a, b) => {
+                return b.total_view - a.total_view;
+            })
+         
         allnews.forEach( news =>{     
         const newsDiv = document.createElement('div');
         newsDiv.innerHTML = `
