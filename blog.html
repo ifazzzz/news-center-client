@@ -16,8 +16,8 @@
               <a class="btn btn-ghost normal-case text-xl">News Center</a>
             </div>
             <div class="flex-none gap-2">
-                <a class="btn btn-ghost normal-case text-xl">News</a>
-                <a href="blog.html" class="btn btn-ghost normal-case text-xl">Blog</a>
+                <a href="index.html" class="btn btn-ghost normal-case text-xl">News</a>
+                <a class="btn btn-ghost normal-case text-xl">Blog</a>
               <div class="dropdown dropdown-end">
                 <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                   <div class="w-10 rounded-full">
@@ -33,8 +33,42 @@
         </div>
     </header>
 
-    <main>
-        
+    <main class="container mx-auto my-6">
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div class="collapse-title text-xl font-medium">
+              What is the difference between Var , Let and Const ?
+            </div>
+            <div class="collapse-content"> 
+              <p>var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared. They are all hoisted to the top of their scope. But while var variables are initialized with undefined , let and const variables are not initialized.The differences between var, let, and const variable declaration in JavaScript include:
+                Variables declared with var and const are scoped to the immediate function body.
+                Variables declared with the var keyword are hoisted. Hoisting means that the variable can be accessed in their enclosing scope even before they are declared.
+                Variables declared with the let keyword are block-scoped, which means the variables will have scope to the immediate enclosing block.</p>
+            </div>
+        </div>
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div class="collapse-title text-xl font-medium">
+              What is the difference between Arrow Function and Regular Function in JavaScript?
+            </div>
+            <div class="collapse-content"> 
+              <p>The first and most obvious difference between arrow functions and regular functions is their syntax. Not only do they look different, but arrow functions also provide an implicit return shorthand and allow parenthesis around a single argument to be omitted. Inside a regular function, execution context (i.e. the value of this) is dynamic. This means that the value of this depends on how the function was invoked (simple invocation, method invocation, indirect invocation or constructor invocation). On the other hand, an arrow function does not define its own execution context. This results in an arrow function's this being resolved lexically (i.e. the scope in which the arrow function was defined).</p>
+            </div>
+        </div>
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div class="collapse-title text-xl font-medium">
+              Describe difference between Map, forEach, filter and find.
+            </div>
+            <div class="collapse-content"> 
+              <p>.forEach(), is used to execute the same code on every element in an array but does not change the array and it returns undefined. .map() executes the same code on every element in an array and returns a new array with the updated elements. .filter() checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria. The find() executes the callback function for each element in the array until the callback returns a truthy value. If the callback returns a truthy value, the find() immediately returns the element and stops searching. Otherwise, it returns undefined. If you want to find the index of the found element, you can use the findIndex() method.</p>
+            </div>
+        </div>
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div class="collapse-title text-xl font-medium">
+              Why Should you use Template String?
+            </div>
+            <div class="collapse-content"> 
+              <p>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements. Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called tagged templates.Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). However, a tagged template literal may not result in a string; it can be used with a custom tag function to perform whatever operations you want on the different parts of the template literal.</p>
+            </div>
+        </div>
     </main>
 </body>
 </html>    

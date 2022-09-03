@@ -12,7 +12,7 @@ const displayCategories = (categories) =>{
     categories.forEach(category =>{
         const div = document.createElement('div');
         div.innerHTML = `
-        <button onclick="loadNews('${category.category_id}')" class="btn btn-link">${category.category_name}</button>
+        <button onclick="loadNews('${category.category_id}')" class="btn btn-ghost">${category.category_name}</button>
         `;
         categoryContainer.appendChild(div);
     })
@@ -25,7 +25,7 @@ const loadNews = (category_id) =>{
     .then(response => response.json())
     .then(data => displayNews(data.data))
     .catch(error => console.log(error))
-    
+
     const spinner = document.getElementById('spinner');
     spinner.classList.remove('hidden');
 }
@@ -59,7 +59,7 @@ const displayNews = (allnews) =>{
                 <img class="w-10 rounded-full" src=${news.author.img}/>
                 <p>${news.author.name} | ${news.author.published_date}</p>
                 <p>View : ${news.total_view}</p>
-                <label onclick="loadDetails('${news._id}')" for="my-modal-4" class="btn btn-primary modal-button">Details</label>
+                <label onclick="loadDetails('${news._id}')" for="my-modal-4" class="btn bg-slate-500 modal-button">Details</label>
             </div>
         </div>
         `;
